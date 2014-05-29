@@ -1,0 +1,19 @@
+---
+title: Reborn
+date: 2014-05-29 15:46 UTC
+tags: open government
+---
+
+Great plans for the weekend! On saturday I will be attending the weekly meetup of [Congreso Interactivo](http://www.congresointeractivo.org/) at 
+the Barracas Public Library [Hacklab](http://www.bibliobarracas.com.ar/hacklab/) here in Buenos Aires.
+
+READMORE
+
+CI is a **good** civic engagement organisation devoted to social research and the development of [open goverment](http://en.wikipedia.org/wiki/Open_government) tools to improve the exercise of governance towards a better democracy. They have released upstanding apps like [Elegilegi](http://www.elegilegi.org/) and 
+[Decada Votada](http://www.decadavotada.com.ar/), drawing attention of [local](http://www.lanacion.com.ar/1604004-como-votarias-siendo-diputado) and 
+[international](https://source.opennews.org/en-US/articles/decada-votada-news-app-track-voting-records/) news.
+
+Since I was a teenager I dream of being part of a open goverment initiative and I think this is a great opportunity for me to add up to a team effort 
+towards the envision and effective implementation of an open democracy in Argentina.
+
+M-x start-hacking.
