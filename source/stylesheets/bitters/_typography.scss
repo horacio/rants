@@ -102,3 +102,8 @@ cite {
     content: '\2014 \00A0';
   }
 }
+
+nav {
+  font-family: $nav-font-family;
+  font-size: $base-font-size * 1.5;
+}
