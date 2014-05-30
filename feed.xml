@@ -2,35 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Blog Name</title>
   <subtitle>Blog subtitle</subtitle>
-  <id>http://blog.url.com/</id>
-  <link href="http://blog.url.com/"/>
+  <id>http://blog.url.com/rants</id>
+  <link href="http://blog.url.com/rants"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-05-29T12:46:00-03:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
-  <entry>
-    <title>Reborn</title>
-    <link rel="alternate" href="http://blog.url.com/2014/05/29/reborn/"/>
-    <id>http://blog.url.com/2014/05/29/reborn/</id>
-    <published>2014-05-29T12:46:00-03:00</published>
-    <updated>2014-05-29T17:15:57-03:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Great plans for the weekend! On saturday I will be attending the weekly meetup of &lt;a href="http://www.congresointeractivo.org/"&gt;Congreso Interactivo&lt;/a&gt; at 
-the Barracas Public Library &lt;a href="http://www.bibliobarracas.com.ar/hacklab/"&gt;Hacklab&lt;/a&gt; here in Buenos Aires.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;CI is a &lt;strong&gt;good&lt;/strong&gt; civic engagement organisation devoted to social research and the development of &lt;a href="http://en.wikipedia.org/wiki/Open_government"&gt;open goverment&lt;/a&gt; tools to improve the exercise of governance towards a better democracy. They have released upstanding apps like &lt;a href="http://www.elegilegi.org/"&gt;Elegilegi&lt;/a&gt; and 
-&lt;a href="http://www.decadavotada.com.ar/"&gt;Decada Votada&lt;/a&gt;, drawing attention of &lt;a href="http://www.lanacion.com.ar/1604004-como-votarias-siendo-diputado"&gt;local&lt;/a&gt; and 
-&lt;a href="https://source.opennews.org/en-US/articles/decada-votada-news-app-track-voting-records/"&gt;international&lt;/a&gt; news.&lt;/p&gt;
-
-&lt;p&gt;Since I was a teenager I dream of being part of a open goverment initiative and I think this is a great opportunity for me to add up to a team effort 
-towards the envision and effective implementation of an open democracy in Argentina.&lt;/p&gt;
-
-&lt;p&gt;M-x start-hacking.&lt;/p&gt;
-</content>
-  </entry>
 </feed>
