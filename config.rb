@@ -5,6 +5,7 @@
 Time.zone = "UTC"
 
 activate :blog do |blog|
+  blog.sources = "/posts/:year-:month-:day-:title.html"
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
   blog.summary_separator = /READMORE/
