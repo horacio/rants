@@ -10,6 +10,9 @@ activate :blog do |blog|
   blog.summary_separator = /READMORE/
 end
 
+activate :relative_assets
+set :relative_links, true
+
 activate :directory_indexes
 
 page "/feed.xml", layout: false
