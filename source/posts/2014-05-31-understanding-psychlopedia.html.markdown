@@ -4,7 +4,7 @@ date: 2014-05-31 21:19 UTC
 tags: psychlopedia, product design
 ---
 
-During the past weeks, I started to question myself about one of my current endeavors: [Psychlopedia](http://psychlopedia.herokuapp.com/).
+During the past weeks, I started to question myself about one of my current endeavors: [Psychlopedia](http://psiclopedia.svankmajer.net/).
 I want to get a thorough comprehension of what I am trying to accomplish with the time and resources I am putting into this project. Know 
 what can be done, thus find out and test what could or should be done to finally **do** what must be done.
 
