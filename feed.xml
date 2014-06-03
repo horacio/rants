@@ -5,10 +5,54 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-05-29T12:46:00-03:00</updated>
+  <updated>2014-05-31T18:19:00-03:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Understanding Psychlopedia</title>
+    <link rel="alternate" href="http://blog.url.com/2014/05/31/understanding-psychlopedia/"/>
+    <id>http://blog.url.com/2014/05/31/understanding-psychlopedia/</id>
+    <published>2014-05-31T18:19:00-03:00</published>
+    <updated>2014-06-03T13:33:56-03:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;During the past weeks, I started to question myself about one of my current endeavors: &lt;a href="http://psychlopedia.herokuapp.com/"&gt;Psychlopedia&lt;/a&gt;.
+I want to get a thorough comprehension of what I am trying to accomplish with the time and resources I am putting into this project. Know 
+what can be done, thus find out and test what could or should be done to finally &lt;strong&gt;do&lt;/strong&gt; what must be done.&lt;/p&gt;
+
+&lt;p&gt;No fooling around.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I want to make clear that I don&amp;#39;t know for certain any of what I will be talking about in this post. This is an exploratory exercise to me, and it
+should be so for you too, so please bear that in mind.&lt;/p&gt;
+
+&lt;p&gt;I was reading &lt;a href="http://thoughtbot.com/"&gt;thoughtbot&lt;/a&gt;&amp;#39;s &lt;a href="http://playbook.thoughtbot.com/"&gt;Playbook&lt;/a&gt; when I stumbled on Product Design Sprints, an amazing 
+concept developed by the &lt;a href="http://www.gv.com/design/"&gt;Google Ventures&amp;#39; design team&lt;/a&gt;. 
+Essentially, a Product Design Sprint is a technique that increases the chance of channeling efforts into meaningful and sustainable productions. 
+Please read thoughtbot&amp;#39;s &lt;a href="http://robots.thoughtbot.com/the-product-design-sprint"&gt;amazing article&lt;/a&gt; on this subject which explains it to the detail 
+perfectly.&lt;/p&gt;
+
+&lt;p&gt;Currently I am stressing the following question: &lt;a href="https://www.youtube.com/watch?v=f84LymEs67Y"&gt;&amp;#39;what job is the user hiring the product to do?&amp;#39;&lt;/a&gt;.
+It is a question proposed by &lt;a href="http://en.wikipedia.org/wiki/Clayton_M._Christensen"&gt;Clayton Christensen&lt;/a&gt;, a Business Administration professor at
+Harvard Business School. Having asked myself about this not even once in my own product design path, I was really intrigued. So I grabbed my coat
+and went out for a random walk (&lt;em&gt;on a Hidden Markov chain&lt;/em&gt;), my regular deep thinking session.&lt;/p&gt;
+
+&lt;p&gt;Walking down Colegiales, I started to identify three possible jobs Psychlopedia in its current conception could do and do pretty well:&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;em&gt;Feed our curiosity and increase the quality of its by-products&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;em&gt;Connect us to others through our inner experiences&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;em&gt;Lessen our fear and/or anxiety towards psychonautics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;So now I am trying to finish the critical path based on these assumptions.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This is a work-in-progress and part of a series on product design focused on Psychlopedia, a digital archive of psychedelic experiences.&lt;/em&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Reborn</title>
     <link rel="alternate" href="http://blog.url.com/2014/05/29/reborn/"/>
