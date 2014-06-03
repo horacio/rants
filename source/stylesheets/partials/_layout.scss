@@ -1,5 +1,8 @@
 #main {
   @include outer-container;
+  p {
+    text-align: justify;
+  }
   ol {
     font-size: 1em;
     font-weight: 500;
