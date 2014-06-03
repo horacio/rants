@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Blog Name</title>
-  <subtitle>Blog subtitle</subtitle>
-  <id>http://blog.url.com/</id>
-  <link href="http://blog.url.com/"/>
-  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <title>svankmajer's blog</title>
+  <subtitle>a learning logbook</subtitle>
+  <id>http://rants.svankmajer.net/</id>
+  <link href="http://rants.svankmajer.net/"/>
+  <link href="http://rants.svankmajer.net/feed.xml" rel="self"/>
   <updated>2014-05-31T18:19:00-03:00</updated>
   <author>
-    <name>Blog Author</name>
+    <name>svankmajer</name>
   </author>
   <entry>
     <title>Understanding Psychlopedia</title>
-    <link rel="alternate" href="http://blog.url.com/2014/05/31/understanding-psychlopedia/"/>
-    <id>http://blog.url.com/2014/05/31/understanding-psychlopedia/</id>
+    <link rel="alternate" href="http://rants.svankmajer.net/2014/05/31/understanding-psychlopedia/"/>
+    <id>http://rants.svankmajer.net/2014/05/31/understanding-psychlopedia/</id>
     <published>2014-05-31T18:19:00-03:00</published>
     <updated>2014-06-03T13:36:45-03:00</updated>
     <author>
-      <name>Article Author</name>
+      <name>svankmajer</name>
     </author>
     <content type="html">&lt;p&gt;During the past weeks, I started to question myself about one of my current endeavors: &lt;a href="http://psiclopedia.svankmajer.net/"&gt;Psychlopedia&lt;/a&gt;.
 I want to get a thorough comprehension of what I am trying to accomplish with the time and resources I am putting into this project. Know 
@@ -55,12 +55,12 @@ and went out for a random walk (&lt;em&gt;on a Hidden Markov chain&lt;/em&gt;), 
   </entry>
   <entry>
     <title>Reborn</title>
-    <link rel="alternate" href="http://blog.url.com/2014/05/29/reborn/"/>
-    <id>http://blog.url.com/2014/05/29/reborn/</id>
+    <link rel="alternate" href="http://rants.svankmajer.net/2014/05/29/reborn/"/>
+    <id>http://rants.svankmajer.net/2014/05/29/reborn/</id>
     <published>2014-05-29T12:46:00-03:00</published>
     <updated>2014-05-29T17:15:57-03:00</updated>
     <author>
-      <name>Article Author</name>
+      <name>svankmajer</name>
     </author>
     <content type="html">&lt;p&gt;Great plans for the weekend! On saturday I will be attending the weekly meetup of &lt;a href="http://www.congresointeractivo.org/"&gt;Congreso Interactivo&lt;/a&gt; at 
 the Barracas Public Library &lt;a href="http://www.bibliobarracas.com.ar/hacklab/"&gt;Hacklab&lt;/a&gt; here in Buenos Aires.&lt;/p&gt;
