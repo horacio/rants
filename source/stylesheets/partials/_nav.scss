@@ -1,6 +1,6 @@
 nav {
-  border-bottom: 1px solid $base-border-color;
   margin: em(30) 0;
+  text-align: center;
 
   ul {
     display: inline-block;
@@ -9,7 +9,7 @@ nav {
 }
 
 .blog-title {
-  font-size: 1.4em;
+  font-size: 1.75em;
   font-weight: 700;
   letterspacing: 4px;
   text-transform: uppercase;
