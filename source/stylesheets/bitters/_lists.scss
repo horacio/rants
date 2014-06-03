@@ -7,6 +7,10 @@ ul, ol {
     margin-bottom: 1.875em;
   }
 
+  li.tagged_post {
+    margin-top: 20px;
+  }
+
   &%default-ul {
     list-style-type: disc;
     margin-bottom: $base-line-height / 2;
