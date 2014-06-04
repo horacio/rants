@@ -1,5 +1,5 @@
 ---
-title: Git: Stashing (annex)
+title: Git - Stashing (annex)
 date: 2014-06-04 18:12 UTC
 tags: programming, git
 ---
