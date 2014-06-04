@@ -15,6 +15,7 @@ activate :relative_assets
 set :relative_links, true
 
 activate :directory_indexes
+activate :syntax
 
 page "/feed.xml", layout: false
 
