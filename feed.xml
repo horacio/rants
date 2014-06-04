@@ -5,10 +5,95 @@
   <id>http://rants.svankmajer.net/</id>
   <link href="http://rants.svankmajer.net/"/>
   <link href="http://rants.svankmajer.net/feed.xml" rel="self"/>
-  <updated>2014-06-03T14:32:00-03:00</updated>
+  <updated>2014-06-04T15:12:00-03:00</updated>
   <author>
     <name>svankmajer</name>
   </author>
+  <entry>
+    <title>Git stashing</title>
+    <link rel="alternate" href="http://rants.svankmajer.net/2014/06/04/git-stash/"/>
+    <id>http://rants.svankmajer.net/2014/06/04/git-stash/</id>
+    <published>2014-06-04T15:12:00-03:00</published>
+    <updated>2014-06-04T16:57:26-03:00</updated>
+    <author>
+      <name>svankmajer</name>
+    </author>
+    <content type="html">&lt;p&gt;You all know about good ol&amp;#39; &lt;code&gt;git-stash&lt;/code&gt;. If you happen to don&amp;#39;t know about it, don&amp;#39;t worry and, please, fearlessly run:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ man git-stash&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;No sweat. It might be the only intelligible Git man page of all Git man pages. But today&amp;#39;s post highlights something that doesn&amp;#39;t appear in this man 
+page and I that didn&amp;#39;t know until minutes ago. I thought it might be cool to share it.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Essentially, &lt;code&gt;git-stash&lt;/code&gt; lets you save the current state of your working directory away and enjoy a pristine working directory that points to &lt;code&gt;HEAD&lt;/code&gt; 
+afterwards. Those stashed local modifications can be listed, inspected and applied on top of a particular commit. They are stored in &lt;code&gt;refs/stash&lt;/code&gt; and they
+can be referenced using standard reflog syntax, e.g. &lt;code&gt;stash{0}&lt;/code&gt; for the last saved stash, &lt;code&gt;stash{1}&lt;/code&gt; for the previous. &lt;code&gt;stash{2.hours.ago}&lt;/code&gt; is also possible. Slick. &lt;/p&gt;
+
+&lt;p&gt;So, for example, if you want to inspect the penultimate stash, you go like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git stash show -p stash@{1}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To get something along the lines of:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="highlight diff"&gt;&lt;span class="gh"&gt;diff --git a/source.rb b/source.rb
+index e69de29..a5c8076 100644
+&lt;/span&gt;&lt;span class="gd"&gt;--- a/index.html
+&lt;/span&gt;&lt;span class="gi"&gt;+++ b/index.html
+&lt;/span&gt;&lt;span class="err"&gt;@@ -0,0 +1 @@
+&lt;/span&gt;&lt;span class="gi"&gt;+An important diff.
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nothing particularly esoteric here.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, though, it seems that &lt;strong&gt;you can&amp;#39;t see the diffstat for stashed untracked files&lt;/strong&gt; going like that. If you stashed untracked files with 
+&lt;code&gt;git stash -u&lt;/code&gt; along with other local changes, running &lt;code&gt;git stash show -p stash@{n}&lt;/code&gt; won&amp;#39;t show any pleasant results. What the heck? &lt;/p&gt;
+
+&lt;p&gt;Turns out that what happens is not documented anywhere but can be inferred 
+&lt;a href="https://github.com/git/git/commit/787513027a7d0af3c2cd2f04b85bc7136d580586"&gt;by looking at the commit that introduced the -u functionality&lt;/a&gt;&amp;hellip; or by running
+&lt;code&gt;git log --graph stash@{0}&lt;/code&gt; that prints out something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="highlight plaintext"&gt;*-.   commit 3dac63a4f4c0db4167b1f73699ed15ed6f0e9189
+|\ \  Merge: 01adf14 7e6b4ff feab0b4
+| | | Author: svankmajer &amp;lt;svankmajer@svankmajer.net&amp;gt;
+| | | Date:   Wed Jun 4 16:09:03 2014 -0300
+| | | 
+| | |     WIP on master: 01adf14 Initial commit.
+| | |    
+| | * commit feab0b459862a383886a4b746f1827dd4630fb2d
+| |   Author: svankmajer &amp;lt;svankmajer@svankmajer.net&amp;gt;
+| |   Date:   Wed Jun 4 16:09:03 2014 -0300
+| |   
+| |       untracked files on master: 01adf14 Initial commit.
+| |   
+| * commit 7e6b4fff39516454ceb2fef244ce5db6ed6f4aca
+|/  Author: svankmajer &amp;lt;svankmajer@svankmajer.net&amp;gt;
+|   Date:   Wed Jun 4 16:09:03 2014 -0300
+|   
+|       index on master: 01adf14 Initial commit.
+|  
+* commit 01adf14673212f4bdab771eb11b2f42f84e57df3
+  Author: svankmajer &amp;lt;svankmajer@svankmajer.net&amp;gt;
+    Date:   Wed Jun 4 16:08:26 2014 -0300
+
+            Initial commit.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Investigating a little bit on StackOverflow, I learned that &lt;strong&gt;untracked files are stored in the third parent of a stash commit&lt;/strong&gt;. Yes, stash@{0} has three 
+parents. The first parent was the HEAD of the tree at the moment of &lt;code&gt;git stash save&lt;/code&gt;. The second parent stores the state of the index. The third parent 
+stores the state of the untracked files in the working directory. This means that you can see the untracked part of the last stash doing:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git show stash@{0}^3&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also see the untracked file in the tree doing (notice the colon at the end):&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git show stash@{0}^3:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m still sad that there isn&amp;#39;t a nice way to summarize the differences between staged, unstaged and untracked vs. actual state. Now I know that this is
+due partly to the way stashes are re-applied. But oh well, there is nothing stopping me from creating the difftool of my dreams.&lt;/p&gt;
+
+&lt;p&gt;Maybe I will.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Shulgin</title>
     <link rel="alternate" href="http://rants.svankmajer.net/2014/06/03/shulgin/"/>

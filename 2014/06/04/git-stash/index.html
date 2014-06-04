@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title>svankmajer's blog - Git stashing</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div id="main" role="main">
+      <nav>
+  <ul>
+    <li>
+      <a class="blog-title" href="/">dead waters rise higher than your mind</a>
+    </li>
+    <li>a learning logbook</li>
+  </ul>
+</nav>
+
+      <p>You all know about good ol&#39; <code>git-stash</code>. If you happen to don&#39;t know about it, don&#39;t worry and, please, fearlessly run:</p>
+
+<p><code>$ man git-stash</code></p>
+
+<p>No sweat. It might be the only intelligible Git man page of all Git man pages. But today&#39;s post highlights something that doesn&#39;t appear in this man 
+page and I that didn&#39;t know until minutes ago. I thought it might be cool to share it.</p>
+
+<p></p>
+
+<p>Essentially, <code>git-stash</code> lets you save the current state of your working directory away and enjoy a pristine working directory that points to <code>HEAD</code> 
+afterwards. Those stashed local modifications can be listed, inspected and applied on top of a particular commit. They are stored in <code>refs/stash</code> and they
+can be referenced using standard reflog syntax, e.g. <code>stash{0}</code> for the last saved stash, <code>stash{1}</code> for the previous. <code>stash{2.hours.ago}</code> is also possible. Slick. </p>
+
+<p>So, for example, if you want to inspect the penultimate stash, you go like this:</p>
+
+<p><code>$ git stash show -p stash@{1}</code></p>
+
+<p>To get something along the lines of:</p>
+<pre><code class="highlight diff"><span class="gh">diff --git a/source.rb b/source.rb
+index e69de29..a5c8076 100644
+</span><span class="gd">--- a/index.html
+</span><span class="gi">+++ b/index.html
+</span><span class="err">@@ -0,0 +1 @@
+</span><span class="gi">+An important diff.
+</span></code></pre>
+
+<p>Nothing particularly esoteric here.</p>
+
+<p>Unfortunately, though, it seems that <strong>you can&#39;t see the diffstat for stashed untracked files</strong> going like that. If you stashed untracked files with 
+<code>git stash -u</code> along with other local changes, running <code>git stash show -p stash@{n}</code> won&#39;t show any pleasant results. What the heck? </p>
+
+<p>Turns out that what happens is not documented anywhere but can be inferred 
+<a href="https://github.com/git/git/commit/787513027a7d0af3c2cd2f04b85bc7136d580586">by looking at the commit that introduced the -u functionality</a>&hellip; or by running
+<code>git log --graph stash@{0}</code> that prints out something like this:</p>
+<pre><code class="highlight plaintext">*-.   commit 3dac63a4f4c0db4167b1f73699ed15ed6f0e9189
+|\ \  Merge: 01adf14 7e6b4ff feab0b4
+| | | Author: svankmajer &lt;svankmajer@svankmajer.net&gt;
+| | | Date:   Wed Jun 4 16:09:03 2014 -0300
+| | | 
+| | |     WIP on master: 01adf14 Initial commit.
+| | |    
+| | * commit feab0b459862a383886a4b746f1827dd4630fb2d
+| |   Author: svankmajer &lt;svankmajer@svankmajer.net&gt;
+| |   Date:   Wed Jun 4 16:09:03 2014 -0300
+| |   
+| |       untracked files on master: 01adf14 Initial commit.
+| |   
+| * commit 7e6b4fff39516454ceb2fef244ce5db6ed6f4aca
+|/  Author: svankmajer &lt;svankmajer@svankmajer.net&gt;
+|   Date:   Wed Jun 4 16:09:03 2014 -0300
+|   
+|       index on master: 01adf14 Initial commit.
+|  
+* commit 01adf14673212f4bdab771eb11b2f42f84e57df3
+  Author: svankmajer &lt;svankmajer@svankmajer.net&gt;
+    Date:   Wed Jun 4 16:08:26 2014 -0300
+
+            Initial commit.
+</code></pre>
+
+<p>Investigating a little bit on StackOverflow, I learned that <strong>untracked files are stored in the third parent of a stash commit</strong>. Yes, stash@{0} has three 
+parents. The first parent was the HEAD of the tree at the moment of <code>git stash save</code>. The second parent stores the state of the index. The third parent 
+stores the state of the untracked files in the working directory. This means that you can see the untracked part of the last stash doing:</p>
+
+<p><code>$ git show stash@{0}^3</code></p>
+
+<p>You can also see the untracked file in the tree doing (notice the colon at the end):</p>
+
+<p><code>$ git show stash@{0}^3:</code></p>
+
+<p>I&#39;m still sad that there isn&#39;t a nice way to summarize the differences between staged, unstaged and untracked vs. actual state. Now I know that this is
+due partly to the way stashes are re-applied. But oh well, there is nothing stopping me from creating the difftool of my dreams.</p>
+
+<p>Maybe I will.</p>
+
+      <footer>
+  <div>
+    <p>
+      Follow me online on <a href="https://twitter.com/5vankmajer">Twitter</a> and <a href="https://github.com/svankmajer">GitHub</a>.
+    </p>
+  </div>
+  <ul class="large-column">
+    <li><h5 class="heading">Recent articles</h5></li>
+    <li>
+      <ol>
+          <li>
+            <a href="./">Git stashing</a>
+            <span>Jun  4</span>
+          </li>
+          <li>
+            <a href="../../03/shulgin/">Shulgin</a>
+            <span>Jun  3</span>
+          </li>
+          <li>
+            <a href="../../../05/31/understanding-psychlopedia/">Understanding Psychlopedia</a>
+            <span>May 31</span>
+          </li>
+          <li>
+            <a href="../../../05/29/reborn/">Reborn</a>
+            <span>May 29</span>
+          </li>
+      </ol>
+    </li>
+  </ul>
+  <ul class="small-column">
+    <li><h5 class="heading">Tags</h5></li>
+    <li>
+      <ol>
+          <li><a href="/tags/open-government/">open government (1)</a></li>
+          <li><a href="/tags/life/">life (2)</a></li>
+          <li><a href="/tags/psychlopedia/">psychlopedia (1)</a></li>
+          <li><a href="/tags/product-design/">product design (1)</a></li>
+      </ol>
+    </li>
+  <ul>
+</footer>
+
+    </div>
+  </body>
+</html>
