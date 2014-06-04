@@ -1,7 +1,7 @@
 ---
 title: Git stashing
 date: 2014-06-04 18:12 UTC
-tags:
+tags: programming, git
 ---
 
 You all know about good ol' `git-stash`. If you happen to don't know about it, don't worry and, please, fearlessly run:
