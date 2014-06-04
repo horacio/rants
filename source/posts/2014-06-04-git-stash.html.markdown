@@ -1,0 +1,84 @@
+---
+title: Git stashing
+date: 2014-06-04 18:12 UTC
+tags:
+---
+
+You all know about good ol' `git-stash`. If you happen to don't know about it, don't worry and, please, fearlessly run:
+
+`$ man git-stash`
+
+No sweat. It might be the only intelligible Git man page of all Git man pages. But today's post highlights something that doesn't appear in this man 
+page and I that didn't know until minutes ago. I thought it might be cool to share it.
+
+READMORE
+
+Essentially, `git-stash` lets you save the current state of your working directory away and enjoy a pristine working directory that points to `HEAD` 
+afterwards. Those stashed local modifications can be listed, inspected and applied on top of a particular commit. They are stored in `refs/stash` and they
+can be referenced using standard reflog syntax, e.g. `stash{0}` for the last saved stash, `stash{1}` for the previous. `stash{2.hours.ago}` is also possible. Slick. 
+
+So, for example, if you want to inspect the penultimate stash, you go like this:
+
+`$ git stash show -p stash@{1}`
+
+To get something along the lines of:
+
+```
+diff --git a/source.rb b/source.rb
+index e69de29..a5c8076 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1 @@
++An important diff.
+```
+
+Nothing particularly esoteric here.
+
+Unfortunately, though, it seems that **you can't see the diffstat for stashed untracked files** going like that. If you stashed untracked files with 
+`git stash -u` along with other local changes, running `git stash show -p stash@{n}` won't show any pleasant results. What the heck? 
+
+Turns out that what happens is not documented anywhere but can be inferred 
+[by looking at the commit that introduced the -u functionality](https://github.com/git/git/commit/787513027a7d0af3c2cd2f04b85bc7136d580586)... or by running
+`git log --graph stash@{0}` that prints out something like this:
+
+```
+*-.   commit 3dac63a4f4c0db4167b1f73699ed15ed6f0e9189
+|\ \  Merge: 01adf14 7e6b4ff feab0b4
+| | | Author: svankmajer <svankmajer@svankmajer.net>
+| | | Date:   Wed Jun 4 16:09:03 2014 -0300
+| | | 
+| | |     WIP on master: 01adf14 Initial commit.
+| | |    
+| | * commit feab0b459862a383886a4b746f1827dd4630fb2d
+| |   Author: svankmajer <svankmajer@svankmajer.net>
+| |   Date:   Wed Jun 4 16:09:03 2014 -0300
+| |   
+| |       untracked files on master: 01adf14 Initial commit.
+| |   
+| * commit 7e6b4fff39516454ceb2fef244ce5db6ed6f4aca
+|/  Author: svankmajer <svankmajer@svankmajer.net>
+|   Date:   Wed Jun 4 16:09:03 2014 -0300
+|   
+|       index on master: 01adf14 Initial commit.
+|  
+* commit 01adf14673212f4bdab771eb11b2f42f84e57df3
+  Author: svankmajer <svankmajer@svankmajer.net>
+    Date:   Wed Jun 4 16:08:26 2014 -0300
+      
+            Initial commit.
+```
+
+Investigating a little bit on StackOverflow, I learned that **untracked files are stored in the third parent of a stash commit**. Yes, stash@{0} has three 
+parents. The first parent was the HEAD of the tree at the moment of `git stash save`. The second parent stores the state of the index. The third parent 
+stores the state of the untracked files in the working directory. This means that you can see the untracked part of the last stash doing:
+
+`$ git show stash@{0}^3`
+
+You can also see the untracked file in the tree doing (notice the colon at the end):
+
+`$ git show stash@{0}^3:`
+
+I'm still sad that there isn't a nice way to summarize the differences between staged, unstaged and untracked vs. actual state. Now I know that this is
+due partly to the way stashes are re-applied. But oh well, there is nothing stopping me from creating the difftool of my dreams.
+
+Maybe I will.
