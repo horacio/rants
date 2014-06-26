@@ -14,11 +14,12 @@
     <link rel="alternate" href="http://rants.svankmajer.net/2014/06/26/rake-0-9/"/>
     <id>http://rants.svankmajer.net/2014/06/26/rake-0-9/</id>
     <published>2014-06-26T01:50:00-03:00</published>
-    <updated>2014-06-26T02:05:59-03:00</updated>
+    <updated>2014-06-26T02:14:08-03:00</updated>
     <author>
       <name>svankmajer</name>
     </author>
-    <content type="html">&lt;p&gt;I just found out about something cool introduced on Rake 0.9. Take a look at this:&lt;/p&gt;
+    <content type="html">&lt;p&gt;Reading &lt;code&gt;bbatsov&lt;/code&gt;&amp;#39;s &lt;a href="http://batsov.com/articles/2014/05/30/find-out-where-a-rake-task-is-defined/"&gt;blog&lt;/a&gt; (Rubocop creator), I found out about something
+cool introduced on Rake 0.9. Take a look at this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="highlight shell"&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;rake -W publish
 rake publish  /home/svankmajer/.rvm/gems/ruby-2.1.2@rants/../gh-pages.rake:65:in &lt;span class="sb"&gt;`&lt;/span&gt;&amp;lt;top &lt;span class="o"&gt;(&lt;/span&gt;required&lt;span class="o"&gt;)&lt;/span&gt;&amp;gt;&lt;span class="s1"&gt;'
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
