@@ -24,7 +24,13 @@
   </ul>
 </nav>
 
-      <p>Reading <code>bbatsov</code>&#39;s <a href="http://batsov.com/articles/2014/05/30/find-out-where-a-rake-task-is-defined/">blog</a> (Rubocop creator), I found out about something
+        <section>
+    <article>
+      <h1 class="title">
+        <a href="/2014/06/26/rake-0-9/">Rake 0.9</a>
+      </h1>
+      <div class="corpus">
+        <p>Reading <code>bbatsov</code>&#39;s <a href="http://batsov.com/articles/2014/05/30/find-out-where-a-rake-task-is-defined/">blog</a> (Rubocop creator), I found out about something
 cool introduced on Rake 0.9. Take a look at this:</p>
 <pre><code class="highlight shell"><span class="gp">$ </span>rake -W publish
 rake publish  /home/svankmajer/.rvm/gems/ruby-2.1.2@rants/../gh-pages.rake:65:in <span class="sb">`</span>&lt;top <span class="o">(</span>required<span class="o">)</span>&gt;<span class="s1">'
@@ -32,6 +38,10 @@ rake publish  /home/svankmajer/.rvm/gems/ruby-2.1.2@rants/../gh-pages.rake:65:in
 
 <p>Yeap, <code>rake -W &lt;task&gt;</code> resolves to where the task is defined. You can also run it without parameters and see that output for all available tasks. Pretty 
 solid.</p>
+
+      </div>
+    </article>
+  </section>
 
       <footer>
   <div>
