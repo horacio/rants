@@ -2,6 +2,7 @@
 title: Understanding Psychlopedia
 date: 2014-05-31 21:19 UTC
 tags: psychlopedia, product design
+published: false
 ---
 
 During the past weeks, I started to question myself about one of my current endeavors: [Psychlopedia](http://psiclopedia.svankmajer.net/).
