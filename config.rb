@@ -17,6 +17,7 @@ set :relative_links, true
 activate :directory_indexes
 activate :syntax
 
+page "/posts/*", layout: :post_layout
 page "/feed.xml", layout: false
 
 set :markdown_engine, :redcarpet
