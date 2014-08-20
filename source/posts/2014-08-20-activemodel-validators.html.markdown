@@ -2,7 +2,6 @@
 title: ActiveModel validations
 date: 2014-08-20 00:44 UTC
 tags: rails, learning
-published: false
 author: svankmajer
 ---
 
