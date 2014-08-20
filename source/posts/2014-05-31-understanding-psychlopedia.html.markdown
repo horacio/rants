@@ -2,6 +2,7 @@
 title: Understanding Psychlopedia
 date: 2014-05-31 21:19 UTC
 tags: psychlopedia, product design
+author: svankmajer
 published: false
 ---
 

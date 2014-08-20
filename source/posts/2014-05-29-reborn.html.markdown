@@ -2,6 +2,7 @@
 title: Reborn
 date: 2014-05-29 15:46 UTC
 tags: open government, life
+author: svankmajer
 ---
 
 Great plans for the weekend! On saturday I will be attending the weekly meetup of [Congreso Interactivo](http://www.congresointeractivo.org/) at 
