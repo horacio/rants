@@ -1,6 +1,4 @@
-###
-# Blog settings
-###
+require 'source/lib/blog_helpers'
 
 Time.zone = "UTC"
 
@@ -34,3 +32,5 @@ end
 configure :build do
   activate :minify_css
 end
+
+helpers BlogHelpers

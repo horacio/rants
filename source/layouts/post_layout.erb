@@ -1,9 +1,15 @@
 <% wrap_layout :layout do %>
   <section>
     <article>
-      <h1 class="title">
-        <%= link_to current_article.title, current_article.url %>
-      </h1>
+      <div class="post-header">
+        <h1>
+          <%= link_to current_article.title, current_article.url %>
+        </h1>
+        <small>
+          On <%= article_date %>
+          by <%= article_author %>
+        </small>
+      </div>
       <div class="corpus">
         <%= yield %>
       </div>
