@@ -14,15 +14,13 @@
     <link rel="alternate" href="http://rants.svankmajer.net/2014/08/20/activemodel-validators/"/>
     <id>http://rants.svankmajer.net/2014/08/20/activemodel-validators/</id>
     <published>2014-08-19T21:44:00-03:00</published>
-    <updated>2014-08-20T14:42:08-03:00</updated>
+    <updated>2014-08-20T14:50:48-03:00</updated>
     <author>
       <name>svankmajer</name>
     </author>
     <content type="html">&lt;p&gt;Yesterday, I fired up a console and started to code a &lt;a href="http://chimera.labs.oreilly.com/books/1234000001813/ch05.html#breakable_toys"&gt;breakable toy&lt;/a&gt; to improve my TDD skills, which I haven&amp;#39;t yet exercised properly. It&amp;#39;s called Luego (&amp;#39;Later&amp;#39; in Spanish) and is, simply, a Pocket clone. I love &lt;a href="https://getpocket.com/about"&gt;Pocket&lt;/a&gt;. Last year, I was in the top 5% of readers in Pocket. I expect similar results for this year. It is an indispensable tool to me, like &lt;a href="https://evernote.com/"&gt;Evernote&lt;/a&gt; and &lt;a href="https://basecamp.com/"&gt;Basecamp&lt;/a&gt;, two other great products I use daily. So I wanted to think about how would I make my own Pocket, putting in practice what I&amp;#39;ve learned so far about Test-Driven Development. &lt;/p&gt;
 
-&lt;p&gt;I sat down for a few hours and wrote down how Pocket could be designed at a ridiculously high level, in a way that would permit a modest hacker to implement a bare-bones but fully-functioning prototype as a moderate intellectual challenge.&lt;/p&gt;
-
-&lt;p&gt;Now, I would&amp;#39;ve loved to run an adapted version of a &lt;a href="http://robots.thoughtbot.com/the-product-design-sprint"&gt;Product Design Sprint&lt;/a&gt; for this side-project, but I didn&amp;#39;t, because I thought it would be too much. It would&amp;#39;ve been. So, just pencil and paper, lots of fresh water and winter sunlight, and the unstoppable purring of my cats. It was a tough but pedagogical experience, and I think it has greatly improved my web application development process.&lt;/p&gt;
+&lt;p&gt;I sat down for a few hours and wrote down how Pocket could be designed at a ridiculously high level. Now, I would&amp;#39;ve loved to run an adapted version of a &lt;a href="http://robots.thoughtbot.com/the-product-design-sprint"&gt;Product Design Sprint&lt;/a&gt; for this side-project, but I didn&amp;#39;t, because I thought it would be too much. It would&amp;#39;ve been. So, just pencil and paper, lots of fresh water and winter sunlight, and the unstoppable purring of my cats. It was a tough but pedagogical experience, and I think it has greatly improved my web application development process.&lt;/p&gt;
 
 &lt;p&gt;I know is hard to conceive at this point, but this blog post isn&amp;#39;t about the whole design &amp;amp; implementation process (mayhaps in the next post, who knows) but about something I&amp;#39;ve learned about custom validations of ActiveRecord models.&lt;/p&gt;
 
