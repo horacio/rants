@@ -3,6 +3,7 @@ title: Shulgin
 date: 2014-06-03 17:32 UTC
 tags: life
 author: svankmajer
+published: false
 ---
 
 Yesterday at 5pm, Alexander "Sasha" Shulgin passed away.
