@@ -11,8 +11,6 @@ I sat down for a few hours and wrote down how Pocket could be designed at a ridi
 
 I know is hard to conceive at this point, but this blog post isn't about the whole design & implementation process (mayhaps in the next post, who knows) but about something I've learned about custom validations of ActiveRecord models.
 
-## What the fuck
-
 In a nutshell, model-level ActiveRecord validations check your object's state before it hits the database to ensure only valid data gets saved. This means, merely, that when you run `save` on your ActiveRecord model instance, all configured validations are triggered, returning true if all of them passed or false if they didn't; if they didn't, you call call `errors.messages` to see a detail of those validation errors. As you can see, validations are very useful, very low cost (i.e. really easy to test and maintain) and really easy to use.
 
 Rails has lots of common, pre-defined validation helpers (like `presence`, `uniqueness`, `length`, etc.), but also gives you the possibility to define your own custom validators and validation methods. I've used pre-defined validators in my previous Rails applications, but I never really needed a custom solution for some kind of complex validation... until now (or that's what I thought initially). So I went straight to the [Rails guides](http://guides.rubyonrails.org/), which are excellent resources, and started reading about the different ways I could implement them.
