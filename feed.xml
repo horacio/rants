@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://rants.svankmajer.net/2014/08/20/activemodel-validators/"/>
     <id>http://rants.svankmajer.net/2014/08/20/activemodel-validators/</id>
     <published>2014-08-19T21:44:00-03:00</published>
-    <updated>2014-08-21T09:19:03-03:00</updated>
+    <updated>2014-08-21T11:10:19-03:00</updated>
     <author>
       <name>svankmajer</name>
     </author>
@@ -23,8 +23,6 @@
 &lt;p&gt;I sat down for a few hours and wrote down how Pocket could be designed at a ridiculously high level. Now, I would&amp;#39;ve loved to run an adapted version of a &lt;a href="http://robots.thoughtbot.com/the-product-design-sprint"&gt;Product Design Sprint&lt;/a&gt; for this side-project, but I didn&amp;#39;t, because I thought it would be too much. It would&amp;#39;ve been. So, just pencil and paper, lots of fresh water and winter sunlight, and the unstoppable purring of my cats. It was a tough but pedagogical experience, and I think it has greatly improved my web application development process.&lt;/p&gt;
 
 &lt;p&gt;I know is hard to conceive at this point, but this blog post isn&amp;#39;t about the whole design &amp;amp; implementation process (mayhaps in the next post, who knows) but about something I&amp;#39;ve learned about custom validations of ActiveRecord models.&lt;/p&gt;
-
-&lt;h2&gt;What the fuck&lt;/h2&gt;
 
 &lt;p&gt;In a nutshell, model-level ActiveRecord validations check your object&amp;#39;s state before it hits the database to ensure only valid data gets saved. This means, merely, that when you run &lt;code&gt;save&lt;/code&gt; on your ActiveRecord model instance, all configured validations are triggered, returning true if all of them passed or false if they didn&amp;#39;t; if they didn&amp;#39;t, you call call &lt;code&gt;errors.messages&lt;/code&gt; to see a detail of those validation errors. As you can see, validations are very useful, very low cost (i.e. really easy to test and maintain) and really easy to use.&lt;/p&gt;
 

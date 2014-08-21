@@ -53,8 +53,6 @@
 
 <p>I know is hard to conceive at this point, but this blog post isn&#39;t about the whole design &amp; implementation process (mayhaps in the next post, who knows) but about something I&#39;ve learned about custom validations of ActiveRecord models.</p>
 
-<h2>What the fuck</h2>
-
 <p>In a nutshell, model-level ActiveRecord validations check your object&#39;s state before it hits the database to ensure only valid data gets saved. This means, merely, that when you run <code>save</code> on your ActiveRecord model instance, all configured validations are triggered, returning true if all of them passed or false if they didn&#39;t; if they didn&#39;t, you call call <code>errors.messages</code> to see a detail of those validation errors. As you can see, validations are very useful, very low cost (i.e. really easy to test and maintain) and really easy to use.</p>
 
 <p>Rails has lots of common, pre-defined validation helpers (like <code>presence</code>, <code>uniqueness</code>, <code>length</code>, etc.), but also gives you the possibility to define your own custom validators and validation methods. I&#39;ve used pre-defined validators in my previous Rails applications, but I never really needed a custom solution for some kind of complex validation&hellip; until now (or that&#39;s what I thought initially). So I went straight to the <a href="http://guides.rubyonrails.org/">Rails guides</a>, which are excellent resources, and started reading about the different ways I could implement them.</p>
