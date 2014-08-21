@@ -6,6 +6,24 @@ nav {
     display: inline-block;
     margin-bottom: em(10);
   }
+
+  .sub-menu {
+    margin-top: 10px;
+    font-size: 1.25em;
+  }
+
+  .sub-menu ul li {
+    display: inline;
+    margin: 5px 7px 5px 7px;
+
+    a {
+      color: #333;
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
 }
 
 .blog-title {
