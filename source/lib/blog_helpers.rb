@@ -3,6 +3,10 @@ module BlogHelpers
     article_information.author
   end
 
+  def article_tags
+    article_information.tags
+  end
+
   def article_date
     format_date(current_article.date)
   end
