@@ -14,19 +14,21 @@
     <link rel="alternate" href="http://rants.svankmajer.net/2014/08/20/activemodel-validators/"/>
     <id>http://rants.svankmajer.net/2014/08/20/activemodel-validators/</id>
     <published>2014-08-19T21:44:00-03:00</published>
-    <updated>2014-08-20T14:50:48-03:00</updated>
+    <updated>2014-08-21T09:19:03-03:00</updated>
     <author>
       <name>svankmajer</name>
     </author>
-    <content type="html">&lt;p&gt;Yesterday, I fired up a console and started to code a &lt;a href="http://chimera.labs.oreilly.com/books/1234000001813/ch05.html#breakable_toys"&gt;breakable toy&lt;/a&gt; to improve my TDD skills, which I haven&amp;#39;t yet exercised properly. It&amp;#39;s called Luego (&amp;#39;Later&amp;#39; in Spanish) and is, simply, a Pocket clone. I love &lt;a href="https://getpocket.com/about"&gt;Pocket&lt;/a&gt;. Last year, I was in the top 5% of readers in Pocket. I expect similar results for this year. It is an indispensable tool to me, like &lt;a href="https://evernote.com/"&gt;Evernote&lt;/a&gt; and &lt;a href="https://basecamp.com/"&gt;Basecamp&lt;/a&gt;, two other great products I use daily. So I wanted to think about how would I make my own Pocket, putting in practice what I&amp;#39;ve learned so far about Test-Driven Development. &lt;/p&gt;
+    <content type="html">&lt;p&gt;Yesterday, I fired up a console and started to code a &lt;a href="http://chimera.labs.oreilly.com/books/1234000001813/ch05.html#breakable_toys"&gt;breakable toy&lt;/a&gt; to see if I could drive its development using integration test driven development, which I haven&amp;#39;t yet exercised properly. It&amp;#39;s called Luego (&amp;#39;Later&amp;#39; in Spanish) and is, simply, a Pocket clone. I love &lt;a href="https://getpocket.com/about"&gt;Pocket&lt;/a&gt;. Last year, I was in the top 5% of readers in Pocket. I expect similar results for this year. It is an indispensable tool to me, like &lt;a href="https://evernote.com/"&gt;Evernote&lt;/a&gt; and &lt;a href="https://basecamp.com/"&gt;Basecamp&lt;/a&gt;, two other great products I use daily. So I wanted to think about how would I make my own Pocket, putting in practice what I&amp;#39;ve learned so far about Test-Driven Development. &lt;/p&gt;
 
 &lt;p&gt;I sat down for a few hours and wrote down how Pocket could be designed at a ridiculously high level. Now, I would&amp;#39;ve loved to run an adapted version of a &lt;a href="http://robots.thoughtbot.com/the-product-design-sprint"&gt;Product Design Sprint&lt;/a&gt; for this side-project, but I didn&amp;#39;t, because I thought it would be too much. It would&amp;#39;ve been. So, just pencil and paper, lots of fresh water and winter sunlight, and the unstoppable purring of my cats. It was a tough but pedagogical experience, and I think it has greatly improved my web application development process.&lt;/p&gt;
 
 &lt;p&gt;I know is hard to conceive at this point, but this blog post isn&amp;#39;t about the whole design &amp;amp; implementation process (mayhaps in the next post, who knows) but about something I&amp;#39;ve learned about custom validations of ActiveRecord models.&lt;/p&gt;
 
-&lt;p&gt;In a nutshell, model-level ActiveRecord validations check your object&amp;#39;s state before it hits the database to ensure only valid data gets saved. This means, merely, that when you run &lt;code&gt;save&lt;/code&gt; on your ActiveRecord model instance, all configured validations are triggered, returning true if all of them passed or false if they didn&amp;#39;t; if they didn&amp;#39;t, you call call &lt;code&gt;errors.messages&lt;/code&gt; to see a detail of those errors. As you can see, they are very useful, very low cost (i.e. really easy to test and maintain) and really easy to use.&lt;/p&gt;
+&lt;h2&gt;What the fuck&lt;/h2&gt;
 
-&lt;p&gt;Rails has lots of common, pre-defined validation helpers (like &lt;code&gt;presence&lt;/code&gt;, &lt;code&gt;uniqueness&lt;/code&gt;, &lt;code&gt;length&lt;/code&gt;, etc.), but also, gives you the possibility to define your own custom validators and validation methods. I always used pre-defined validators in my previous Rails applications, but I never really needed a custom solution for some kind of complex validation&amp;hellip; until now (or that what I thought). So I went to the &lt;a href="http://guides.rubyonrails.org/"&gt;Rails guides&lt;/a&gt; which are excellent resources and started reading about the different ways I could implement them. &lt;/p&gt;
+&lt;p&gt;In a nutshell, model-level ActiveRecord validations check your object&amp;#39;s state before it hits the database to ensure only valid data gets saved. This means, merely, that when you run &lt;code&gt;save&lt;/code&gt; on your ActiveRecord model instance, all configured validations are triggered, returning true if all of them passed or false if they didn&amp;#39;t; if they didn&amp;#39;t, you call call &lt;code&gt;errors.messages&lt;/code&gt; to see a detail of those validation errors. As you can see, validations are very useful, very low cost (i.e. really easy to test and maintain) and really easy to use.&lt;/p&gt;
+
+&lt;p&gt;Rails has lots of common, pre-defined validation helpers (like &lt;code&gt;presence&lt;/code&gt;, &lt;code&gt;uniqueness&lt;/code&gt;, &lt;code&gt;length&lt;/code&gt;, etc.), but also gives you the possibility to define your own custom validators and validation methods. I&amp;#39;ve used pre-defined validators in my previous Rails applications, but I never really needed a custom solution for some kind of complex validation&amp;hellip; until now (or that&amp;#39;s what I thought initially). So I went straight to the &lt;a href="http://guides.rubyonrails.org/"&gt;Rails guides&lt;/a&gt;, which are excellent resources, and started reading about the different ways I could implement them.&lt;/p&gt;
 
 &lt;p&gt;Rails offers two ways to implement custom validation: &lt;strong&gt;custom validators&lt;/strong&gt; and &lt;strong&gt;custom validation methods&lt;/strong&gt;. Custom validators are classes that extend &lt;code&gt;ActiveModel::Validator&lt;/code&gt; and implement a &lt;code&gt;validate(record)&lt;/code&gt; method. You can use this validator calling &lt;code&gt;validates_with :my_custom_validator&lt;/code&gt; in your model class. Here is a code sample:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="highlight ruby"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyCustomValidator&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveModel&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Validator&lt;/span&gt;
@@ -37,7 +39,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;So, in your model class, you call the validator like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="highlight ruby"&gt;&lt;span class="k"&gt;class&lt;/span&gt;  &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
+&lt;pre&gt;&lt;code class="highlight ruby"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyModel&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
   &lt;span class="kp"&gt;include&lt;/span&gt; &lt;span class="no"&gt;ActiveModel&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Validations&lt;/span&gt;
 
    &lt;span class="c1"&gt;# other validations&lt;/span&gt;
@@ -71,7 +73,7 @@
     <link rel="alternate" href="http://rants.svankmajer.net/2014/06/26/rake-0-9/"/>
     <id>http://rants.svankmajer.net/2014/06/26/rake-0-9/</id>
     <published>2014-06-26T01:50:00-03:00</published>
-    <updated>2014-08-20T09:55:55-03:00</updated>
+    <updated>2014-08-20T18:37:32-03:00</updated>
     <author>
       <name>svankmajer</name>
     </author>

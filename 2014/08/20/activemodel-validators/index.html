@@ -42,20 +42,22 @@
           <a href="/2014/08/20/activemodel-validators/">ActiveModel validations</a>
         </h1>
         <small>
-          On Aug 20, 2014
-          by svankmajer
+          Aug 20, 2014
+          on rails, learning
         </small>
       </div>
       <div class="corpus">
-        <p>Yesterday, I fired up a console and started to code a <a href="http://chimera.labs.oreilly.com/books/1234000001813/ch05.html#breakable_toys">breakable toy</a> to improve my TDD skills, which I haven&#39;t yet exercised properly. It&#39;s called Luego (&#39;Later&#39; in Spanish) and is, simply, a Pocket clone. I love <a href="https://getpocket.com/about">Pocket</a>. Last year, I was in the top 5% of readers in Pocket. I expect similar results for this year. It is an indispensable tool to me, like <a href="https://evernote.com/">Evernote</a> and <a href="https://basecamp.com/">Basecamp</a>, two other great products I use daily. So I wanted to think about how would I make my own Pocket, putting in practice what I&#39;ve learned so far about Test-Driven Development. </p>
+        <p>Yesterday, I fired up a console and started to code a <a href="http://chimera.labs.oreilly.com/books/1234000001813/ch05.html#breakable_toys">breakable toy</a> to see if I could drive its development using integration test driven development, which I haven&#39;t yet exercised properly. It&#39;s called Luego (&#39;Later&#39; in Spanish) and is, simply, a Pocket clone. I love <a href="https://getpocket.com/about">Pocket</a>. Last year, I was in the top 5% of readers in Pocket. I expect similar results for this year. It is an indispensable tool to me, like <a href="https://evernote.com/">Evernote</a> and <a href="https://basecamp.com/">Basecamp</a>, two other great products I use daily. So I wanted to think about how would I make my own Pocket, putting in practice what I&#39;ve learned so far about Test-Driven Development. </p>
 
 <p>I sat down for a few hours and wrote down how Pocket could be designed at a ridiculously high level. Now, I would&#39;ve loved to run an adapted version of a <a href="http://robots.thoughtbot.com/the-product-design-sprint">Product Design Sprint</a> for this side-project, but I didn&#39;t, because I thought it would be too much. It would&#39;ve been. So, just pencil and paper, lots of fresh water and winter sunlight, and the unstoppable purring of my cats. It was a tough but pedagogical experience, and I think it has greatly improved my web application development process.</p>
 
 <p>I know is hard to conceive at this point, but this blog post isn&#39;t about the whole design &amp; implementation process (mayhaps in the next post, who knows) but about something I&#39;ve learned about custom validations of ActiveRecord models.</p>
 
-<p>In a nutshell, model-level ActiveRecord validations check your object&#39;s state before it hits the database to ensure only valid data gets saved. This means, merely, that when you run <code>save</code> on your ActiveRecord model instance, all configured validations are triggered, returning true if all of them passed or false if they didn&#39;t; if they didn&#39;t, you call call <code>errors.messages</code> to see a detail of those errors. As you can see, they are very useful, very low cost (i.e. really easy to test and maintain) and really easy to use.</p>
+<h2>What the fuck</h2>
 
-<p>Rails has lots of common, pre-defined validation helpers (like <code>presence</code>, <code>uniqueness</code>, <code>length</code>, etc.), but also, gives you the possibility to define your own custom validators and validation methods. I always used pre-defined validators in my previous Rails applications, but I never really needed a custom solution for some kind of complex validation&hellip; until now (or that what I thought). So I went to the <a href="http://guides.rubyonrails.org/">Rails guides</a> which are excellent resources and started reading about the different ways I could implement them. </p>
+<p>In a nutshell, model-level ActiveRecord validations check your object&#39;s state before it hits the database to ensure only valid data gets saved. This means, merely, that when you run <code>save</code> on your ActiveRecord model instance, all configured validations are triggered, returning true if all of them passed or false if they didn&#39;t; if they didn&#39;t, you call call <code>errors.messages</code> to see a detail of those validation errors. As you can see, validations are very useful, very low cost (i.e. really easy to test and maintain) and really easy to use.</p>
+
+<p>Rails has lots of common, pre-defined validation helpers (like <code>presence</code>, <code>uniqueness</code>, <code>length</code>, etc.), but also gives you the possibility to define your own custom validators and validation methods. I&#39;ve used pre-defined validators in my previous Rails applications, but I never really needed a custom solution for some kind of complex validation&hellip; until now (or that&#39;s what I thought initially). So I went straight to the <a href="http://guides.rubyonrails.org/">Rails guides</a>, which are excellent resources, and started reading about the different ways I could implement them.</p>
 
 <p>Rails offers two ways to implement custom validation: <strong>custom validators</strong> and <strong>custom validation methods</strong>. Custom validators are classes that extend <code>ActiveModel::Validator</code> and implement a <code>validate(record)</code> method. You can use this validator calling <code>validates_with :my_custom_validator</code> in your model class. Here is a code sample:</p>
 <pre><code class="highlight ruby"><span class="k">class</span> <span class="nc">MyCustomValidator</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span><span class="o">::</span><span class="no">Validator</span>
@@ -66,7 +68,7 @@
 </code></pre>
 
 <p>So, in your model class, you call the validator like this:</p>
-<pre><code class="highlight ruby"><span class="k">class</span>  <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+<pre><code class="highlight ruby"><span class="k">class</span> <span class="nc">MyModel</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
   <span class="kp">include</span> <span class="no">ActiveModel</span><span class="o">::</span><span class="no">Validations</span>
 
    <span class="c1"># other validations</span>
