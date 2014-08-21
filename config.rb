@@ -15,6 +15,7 @@ set :relative_links, true
 activate :directory_indexes
 activate :syntax
 
+page "/about", layout: :service_layout
 page "/posts/*", layout: :post_layout
 page "/feed.xml", layout: false
 
