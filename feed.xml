@@ -5,10 +5,40 @@
   <id>http://rants.svankmajer.net/</id>
   <link href="http://rants.svankmajer.net/"/>
   <link href="http://rants.svankmajer.net/feed.xml" rel="self"/>
-  <updated>2014-08-19T21:44:00-03:00</updated>
+  <updated>2014-08-25T19:10:00-03:00</updated>
   <author>
     <name>svankmajer</name>
   </author>
+  <entry>
+    <title>Old self</title>
+    <link rel="alternate" href="http://rants.svankmajer.net/2014/08/25/old-self/"/>
+    <id>http://rants.svankmajer.net/2014/08/25/old-self/</id>
+    <published>2014-08-25T19:10:00-03:00</published>
+    <updated>2014-08-25T20:24:47-03:00</updated>
+    <author>
+      <name>svankmajer</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Well, I managed to resolve the &amp;ldquo;routing issue&amp;rdquo;. It wasn&amp;#39;t an issue. All my URLs
+were hardcoded in my template files. That&amp;#39;s embarrasing. I&amp;#39;ll just move forward.
+–  svankiE Apr 26 &amp;#39;12 at 14:13&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And I did.&lt;/p&gt;
+
+&lt;p&gt;Eventually. But I did.&lt;/p&gt;
+
+&lt;p&gt;Back then, me being an aspiring programmer -as I always think of myself- trying to leave my corporate job habits of not learning anything new &lt;strong&gt;ever&lt;/strong&gt;, I couldn&amp;#39;t think of something more scary than posting a question on StackOverflow or a mailing list. I was so afraid of not knowing the answer already. I was afraid of not asking the right questions in the right format. Not thinking in the right direction. Not communicating well enough in English to state my problem clearly and succinctly. I was &lt;strong&gt;paralyzed&lt;/strong&gt; when I encountered a problem or I was confused about something, which happens pretty often while learning anything. I couldn&amp;#39;t move forward.&lt;/p&gt;
+
+&lt;p&gt;How could I not know it already? How? How come I couldn&amp;#39;t debug an excruciatingly simple web application written by myself in a Python web framework? Was I stupid? I wasn&amp;#39;t struggling with strange corner cases while using numpy. The issue wasn&amp;#39;t about continuations or compiler optimization or anything mildly complex. It really devastated me. I started fantasizing with other professions.&lt;/p&gt;
+
+&lt;p&gt;Turns out I wasn&amp;#39;t doing it right. It took me a surprisingly long time to realize that I was hurting myself thinking that not knowing it all was a sign of weakness and incompetence. It was keeping me from what I most wholeheartedly desired: to know, to understand everything. It wasn&amp;#39;t that programming was hard (although it is very, very hard to do it right), it was that I wasn&amp;#39;t doing intelligent efforts to bring me wherever I wanted to be. I thought I knew it all. I couldn&amp;#39;t recognize all those mistakes were mine. It didn&amp;#39;t occur to me that spending some more time thinking and trying things out and being utterly wrong and talking to people about what I was doing was worthwhile. I wasted so much time doing that it makes me mad sometimes.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;#39;t know how to do something, spend time thinking about it, reading about it, talking with others about it. Get your ideas and doubts out of your notebook and talk about them. Then talk about them so more, and then more. You&amp;#39;ll learn how to talk about things doing it, not just thinking your whole life about how it&amp;#39;s done. Sign up on that mailing list and introduce yourself. Same with StackOverflow or your favorite programming language group. Spend quality time doing the things you love. Anything worthwhile takes time and learning things is not an exception. It&amp;#39;s a slow process.&lt;/p&gt;
+
+&lt;p&gt;Be excellent at what you do. Keep thinking, keep learning, keep talking.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>ActiveModel validations</title>
     <link rel="alternate" href="http://rants.svankmajer.net/2014/08/20/activemodel-validators/"/>
