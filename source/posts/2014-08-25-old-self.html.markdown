@@ -1,0 +1,23 @@
+---
+title: Old self
+date: 2014-08-25 22:10 UTC
+tags: self, programming, learning
+---
+
+> Well, I managed to resolve the "routing issue". It wasn't an issue. All my URLs
+> were hardcoded in my template files. That's embarrasing. I'll just move forward.
+> –  svankiE Apr 26 '12 at 14:13
+
+And I did.
+
+Eventually. But I did.
+
+Back then, me being an aspiring programmer -as I always think of myself- trying to leave my corporate job habits of not learning anything new **ever**, I couldn't think of something more scary than posting a question on StackOverflow or a mailing list. I was so afraid of not knowing the answer already. I was afraid of not asking the right questions in the right format. Not thinking in the right direction. Not communicating well enough in English to state my problem clearly and succinctly. I was **paralyzed** when I encountered a problem or I was confused about something, which happens pretty often while learning anything. I couldn't move forward.
+
+How could I not know it already? How? How come I couldn't debug an excruciatingly simple web application written by myself in a Python web framework? Was I stupid? I wasn't struggling with strange corner cases while using numpy. The issue wasn't about continuations or compiler optimization or anything mildly complex. It really devastated me. I started fantasizing with other professions.
+
+Turns out I wasn't doing it right. It took me a surprisingly long time to realize that I was hurting myself thinking that not knowing it all was a sign of weakness and incompetence. It was keeping me from what I most wholeheartedly desired: to know, to understand everything. It wasn't that programming was hard (although it is very, very hard to do it right), it was that I wasn't doing intelligent efforts to bring me wherever I wanted to be. I thought I knew it all. I couldn't recognize all those mistakes were mine. It didn't occur to me that spending some more time thinking and trying things out and being utterly wrong and talking to people about what I was doing was worthwhile. I wasted so much time doing that it makes me mad sometimes.
+
+If you don't know how to do something, spend time thinking about it, reading about it, talking with others about it. Get your ideas and doubts out of your notebook and talk about them. Then talk about them so more, and then more. You'll learn how to talk about things doing it, not just thinking your whole life about how it's done. Sign up on that mailing list and introduce yourself. Same with StackOverflow or your favorite programming language group. Spend quality time doing the things you love. Anything worthwhile takes time and learning things is not an exception. It's a slow process.
+
+Be excellent at what you do. Keep thinking, keep learning, keep talking.
