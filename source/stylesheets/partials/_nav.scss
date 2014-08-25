@@ -12,15 +12,17 @@ nav {
     font-size: 1.25em;
   }
 
-  .sub-menu ul li {
-    display: inline;
-    margin: 5px 7px 5px 7px;
+  .sub-menu {
+    li {
+      display: inline;
+      margin: 5px 7px 5px 7px;
 
-    a {
-      color: #333;
+      a {
+        color: #333;
 
-      &:hover {
-        opacity: .5;
+        &:hover {
+          opacity: .5;
+        }
       }
     }
   }
