@@ -9,8 +9,9 @@ You all know about good ol' `git-stash`. If you happen to don't know about it, d
 
 `$ man git-stash`
 
-No sweat. It might be the only intelligible Git man page of all Git man pages. But today's post highlights something that doesn't appear in this man 
-page and I that didn't know until minutes ago. I thought it might be cool to share it.
+No sweat. It might be the only intelligible Git man page of all Git man pages.
+But today's post highlights something that doesn't appear in this man page and
+I that didn't know until minutes ago. I thought it might be cool to share it.
 
 READMORE
 
