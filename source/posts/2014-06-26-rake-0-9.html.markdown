@@ -4,13 +4,13 @@ date: 2014-06-26 04:50 UTC
 tags: ruby, tips
 author: svankmajer
 ---
-Reading `bbatsov`'s [blog](http://batsov.com/articles/2014/05/30/find-out-where-a-rake-task-is-defined/) (Rubocop creator), I found out about something
-cool introduced on Rake 0.9. Take a look at this:
+Reading `bbatsov`'s [blog](http://batsov.com/articles/2014/05/30/find-out-where-a-rake-task-is-defined/),
+I found out about something cool introduced on Rake 0.9. Take a look at this:
 
 ```bash
 $ rake -W publish
 rake publish  /home/svankmajer/.rvm/gems/ruby-2.1.2@rants/../gh-pages.rake:65:in `<top (required)>'
 ```
 
-Yeap, `rake -W <task>` resolves to where the task is defined. You can also run it without parameters and see that output for all available tasks. Pretty 
-solid.
+Yeah, `rake -W <task>` resolves to where the task is defined. You can also run
+it without parameters and see that output for all available tasks. Pretty solid.
