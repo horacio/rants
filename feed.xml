@@ -46,11 +46,15 @@ were hardcoded in my template files. That&amp;#39;s embarrasing. I&amp;#39;ll ju
     <link rel="alternate" href="http://rants.svankmajer.net/2014/08/20/activemodel-validators/"/>
     <id>http://rants.svankmajer.net/2014/08/20/activemodel-validators/</id>
     <published>2014-08-19T21:44:00-03:00</published>
-    <updated>2014-08-21T17:47:23-03:00</updated>
+    <updated>2014-08-25T21:44:53-03:00</updated>
     <author>
       <name>svankmajer</name>
     </author>
-    <content type="html">&lt;p&gt;Yesterday, I fired up a console and started to code a &lt;a href="http://chimera.labs.oreilly.com/books/1234000001813/ch05.html#breakable_toys"&gt;breakable toy&lt;/a&gt; to see if I could drive its development using integration test driven development, which I haven&amp;#39;t yet exercised properly. It&amp;#39;s called Luego (&amp;#39;Later&amp;#39; in Spanish) and is, simply, a Pocket clone. I love &lt;a href="https://getpocket.com/about"&gt;Pocket&lt;/a&gt;. Last year, I was in the top 5% of readers in Pocket. I expect similar results for this year. It is an indispensable tool to me, like &lt;a href="https://evernote.com/"&gt;Evernote&lt;/a&gt; and &lt;a href="https://basecamp.com/"&gt;Basecamp&lt;/a&gt;, two other great products I use daily. So I wanted to think about how would I make my own Pocket, putting in practice what I&amp;#39;ve learned so far about Test-Driven Development. &lt;/p&gt;
+    <content type="html">&lt;p&gt;Yesterday, I fired up a console and started to code a &lt;a href="http://chimera.labs.oreilly.com/books/1234000001813/ch05.html#breakable_toys"&gt;breakable toy&lt;/a&gt; to see if I could drive its development using integration test driven development, which I haven&amp;#39;t yet exercised properly. It&amp;#39;s called Luego (&amp;#39;Later&amp;#39; in Spanish) and is, simply, a Pocket clone.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I love &lt;a href="https://getpocket.com/about"&gt;Pocket&lt;/a&gt;. Last year, I was in the top 5% of readers in Pocket. I expect similar results for this year. It is an indispensable tool to me, like &lt;a href="https://evernote.com/"&gt;Evernote&lt;/a&gt; and &lt;a href="https://basecamp.com/"&gt;Basecamp&lt;/a&gt;, two other great products I use daily. So I wanted to think about how would I make my own Pocket, putting in practice what I&amp;#39;ve learned so far about Test-Driven Development. &lt;/p&gt;
 
 &lt;p&gt;I sat down for a few hours and wrote down how Pocket could be designed at a ridiculously high level. Now, I would&amp;#39;ve loved to run an adapted version of a &lt;a href="http://robots.thoughtbot.com/the-product-design-sprint"&gt;Product Design Sprint&lt;/a&gt; for this side-project, but I didn&amp;#39;t, because I thought it would be too much. It would&amp;#39;ve been. So, just pencil and paper, lots of fresh water and winter sunlight, and the unstoppable purring of my cats. It was a tough but pedagogical experience, and I think it has greatly improved my web application development process.&lt;/p&gt;
 
@@ -103,18 +107,18 @@ were hardcoded in my template files. That&amp;#39;s embarrasing. I&amp;#39;ll ju
     <link rel="alternate" href="http://rants.svankmajer.net/2014/06/26/rake-0-9/"/>
     <id>http://rants.svankmajer.net/2014/06/26/rake-0-9/</id>
     <published>2014-06-26T01:50:00-03:00</published>
-    <updated>2014-08-20T18:37:32-03:00</updated>
+    <updated>2014-08-25T21:48:53-03:00</updated>
     <author>
       <name>svankmajer</name>
     </author>
-    <content type="html">&lt;p&gt;Reading &lt;code&gt;bbatsov&lt;/code&gt;&amp;#39;s &lt;a href="http://batsov.com/articles/2014/05/30/find-out-where-a-rake-task-is-defined/"&gt;blog&lt;/a&gt; (Rubocop creator), I found out about something
-cool introduced on Rake 0.9. Take a look at this:&lt;/p&gt;
+    <content type="html">&lt;p&gt;Reading &lt;code&gt;bbatsov&lt;/code&gt;&amp;#39;s &lt;a href="http://batsov.com/articles/2014/05/30/find-out-where-a-rake-task-is-defined/"&gt;blog&lt;/a&gt;,
+I found out about something cool introduced on Rake 0.9. Take a look at this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="highlight shell"&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;rake -W publish
 rake publish  /home/svankmajer/.rvm/gems/ruby-2.1.2@rants/../gh-pages.rake:65:in &lt;span class="sb"&gt;`&lt;/span&gt;&amp;lt;top &lt;span class="o"&gt;(&lt;/span&gt;required&lt;span class="o"&gt;)&lt;/span&gt;&amp;gt;&lt;span class="s1"&gt;'
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Yeap, &lt;code&gt;rake -W &amp;lt;task&amp;gt;&lt;/code&gt; resolves to where the task is defined. You can also run it without parameters and see that output for all available tasks. Pretty 
-solid.&lt;/p&gt;
+&lt;p&gt;Yeah, &lt;code&gt;rake -W &amp;lt;task&amp;gt;&lt;/code&gt; resolves to where the task is defined. You can also run
+it without parameters and see that output for all available tasks. Pretty solid.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -122,7 +126,7 @@ solid.&lt;/p&gt;
     <link rel="alternate" href="http://rants.svankmajer.net/2014/06/04/git-stash/"/>
     <id>http://rants.svankmajer.net/2014/06/04/git-stash/</id>
     <published>2014-06-04T15:12:00-03:00</published>
-    <updated>2014-08-20T09:38:45-03:00</updated>
+    <updated>2014-08-25T21:45:49-03:00</updated>
     <author>
       <name>svankmajer</name>
     </author>
@@ -130,8 +134,9 @@ solid.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;$ man git-stash&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;No sweat. It might be the only intelligible Git man page of all Git man pages. But today&amp;#39;s post highlights something that doesn&amp;#39;t appear in this man 
-page and I that didn&amp;#39;t know until minutes ago. I thought it might be cool to share it.&lt;/p&gt;
+&lt;p&gt;No sweat. It might be the only intelligible Git man page of all Git man pages.
+But today&amp;#39;s post highlights something that doesn&amp;#39;t appear in this man page and
+I that didn&amp;#39;t know until minutes ago. I thought it might be cool to share it.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
