@@ -12,6 +12,8 @@ And I did.
 
 Eventually. But I did.
 
+READMORE
+
 Back then, me being an aspiring programmer -as I always think of myself- trying to leave my corporate job habits of not learning anything new **ever**, I couldn't think of something more scary than posting a question on StackOverflow or a mailing list. I was so afraid of not knowing the answer already. I was afraid of not asking the right questions in the right format. Not thinking in the right direction. Not communicating well enough in English to state my problem clearly and succinctly. I was **paralyzed** when I encountered a problem or I was confused about something, which happens pretty often while learning anything. I couldn't move forward.
 
 How could I not know it already? How? How come I couldn't debug an excruciatingly simple web application written by myself in a Python web framework? Was I stupid? I wasn't struggling with strange corner cases while using numpy. The issue wasn't about continuations or compiler optimization or anything mildly complex. It really devastated me. I started fantasizing with other professions.
