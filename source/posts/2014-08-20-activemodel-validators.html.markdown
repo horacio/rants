@@ -5,7 +5,11 @@ tags: rails, learning
 author: svankmajer
 ---
 
-Yesterday, I fired up a console and started to code a [breakable toy](http://chimera.labs.oreilly.com/books/1234000001813/ch05.html#breakable_toys) to see if I could drive its development using integration test driven development, which I haven't yet exercised properly. It's called Luego ('Later' in Spanish) and is, simply, a Pocket clone. I love [Pocket](https://getpocket.com/about). Last year, I was in the top 5% of readers in Pocket. I expect similar results for this year. It is an indispensable tool to me, like [Evernote](https://evernote.com/) and [Basecamp](https://basecamp.com/), two other great products I use daily. So I wanted to think about how would I make my own Pocket, putting in practice what I've learned so far about Test-Driven Development. 
+Yesterday, I fired up a console and started to code a [breakable toy](http://chimera.labs.oreilly.com/books/1234000001813/ch05.html#breakable_toys) to see if I could drive its development using integration test driven development, which I haven't yet exercised properly. It's called Luego ('Later' in Spanish) and is, simply, a Pocket clone.
+
+READMORE
+
+I love [Pocket](https://getpocket.com/about). Last year, I was in the top 5% of readers in Pocket. I expect similar results for this year. It is an indispensable tool to me, like [Evernote](https://evernote.com/) and [Basecamp](https://basecamp.com/), two other great products I use daily. So I wanted to think about how would I make my own Pocket, putting in practice what I've learned so far about Test-Driven Development. 
 
 I sat down for a few hours and wrote down how Pocket could be designed at a ridiculously high level. Now, I would've loved to run an adapted version of a [Product Design Sprint](http://robots.thoughtbot.com/the-product-design-sprint) for this side-project, but I didn't, because I thought it would be too much. It would've been. So, just pencil and paper, lots of fresh water and winter sunlight, and the unstoppable purring of my cats. It was a tough but pedagogical experience, and I think it has greatly improved my web application development process.
 
